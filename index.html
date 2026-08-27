@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myT5S — Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="initial-black">
+    <!-- Backdrop with background image that fades in when user clicks -->
+    <div id="backdrop" class="backdrop-wrapper">
+        <div class="backdrop-img"></div>
+        <div class="backdrop-overlay"></div>
+        <div class="backdrop-vignette"></div>
+    </div>
+
+    <!-- Screen 0: Traced "Click Anywhere" on Pure Black Background -->
+    <div id="start-screen" class="start-screen">
+        <div class="start-stage">
+            <svg class="domain-svg click-prompt-svg" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+                <text x="50%" y="60%" text-anchor="middle" dominant-baseline="middle" class="serif-trace-text">
+                    <tspan class="trace-char c-ca1">C</tspan><tspan class="trace-char c-ca2">l</tspan><tspan class="trace-char c-ca3">i</tspan><tspan class="trace-char c-ca4">c</tspan><tspan class="trace-char c-ca5">k</tspan><tspan class="trace-char c-ca-space">&nbsp;</tspan><tspan class="trace-char c-ca6">A</tspan><tspan class="trace-char c-ca7">n</tspan><tspan class="trace-char c-ca8">y</tspan><tspan class="trace-char c-ca9">w</tspan><tspan class="trace-char c-ca10">h</tspan><tspan class="trace-char c-ca11">e</tspan><tspan class="trace-char c-ca12">r</tspan><tspan class="trace-char c-ca13">e</tspan>
+                </text>
+            </svg>
+            <div class="click-hint-sub">tap or click anywhere to begin</div>
+        </div>
+    </div>
+
+    <main class="scene-container">
+        <!-- Stage 1: myt5s.app Tracing SVG -->
+        <div id="stage-domain" class="trace-stage">
+            <svg class="domain-svg" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+                <text x="50%" y="60%" text-anchor="middle" dominant-baseline="middle" class="serif-trace-text">
+                    <tspan class="trace-char c-d1">m</tspan><tspan class="trace-char c-d2">y</tspan><tspan class="trace-char c-d3">t</tspan><tspan class="trace-char c-d4">5</tspan><tspan class="trace-char c-d5">s</tspan><tspan class="trace-char c-d6">.</tspan><tspan class="trace-char c-d7">a</tspan><tspan class="trace-char c-d8">p</tspan><tspan class="trace-char c-d9">p</tspan>
+                </text>
+            </svg>
+        </div>
+
+        <!-- Stage 2: Coming Soon... Tracing SVG -->
+        <div id="stage-coming-soon" class="trace-stage">
+            <svg class="domain-svg coming-soon-svg" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+                <text x="50%" y="60%" text-anchor="middle" dominant-baseline="middle" class="serif-trace-text">
+                    <tspan class="trace-char c-cs1">C</tspan><tspan class="trace-char c-cs2">o</tspan><tspan class="trace-char c-cs3">m</tspan><tspan class="trace-char c-cs4">i</tspan><tspan class="trace-char c-cs5">n</tspan><tspan class="trace-char c-cs6">g</tspan><tspan class="trace-char c-cs-space">&nbsp;</tspan><tspan class="trace-char c-cs7">S</tspan><tspan class="trace-char c-cs8">o</tspan><tspan class="trace-char c-cs9">o</tspan><tspan class="trace-char c-cs10">n</tspan><tspan class="trace-char c-cs11">.</tspan><tspan class="trace-char c-cs12">.</tspan><tspan class="trace-char c-cs13">.</tspan>
+                </text>
+            </svg>
+        </div>
+
+        <!-- Subtitle & Audio Status Indicator -->
+        <div id="status-footer" class="status-footer">
+            <div id="audio-indicator" class="audio-pill">
+                <span class="pulse-dot"></span>
+                <span id="audio-label">Playing: Tide Pool.mp3</span>
+            </div>
+            <div class="controls-row">
+                <button id="btn-replay" class="ctrl-btn" title="Replay Intro">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                    </svg>
+                    <span>Replay</span>
+                </button>
+                <button id="btn-audio-toggle" class="ctrl-btn" title="Mute / Unmute">
+                    <svg id="icon-sound" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <span id="audio-toggle-text">Mute</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Audio Element -->
+    <audio id="soundtrack" src="tidepool.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
